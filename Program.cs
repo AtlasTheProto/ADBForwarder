@@ -24,7 +24,7 @@ namespace ADBForwarder
             {
                 Console.WriteLine("ADB not found, downloading in the background...");
                 DownloadADB();
-                Console.WriteLine("Download Successful, starting ADB Daemon...");
+                Console.WriteLine($"Download Successful!\nLocated at: {adbPath}\nStarting ADB Daemon...");
                 var result = server.StartServer(adbPath, restartServerIfNewer: false);
                 
             }
@@ -66,13 +66,14 @@ namespace ADBForwarder
         {
             using (var client = new WebClient())
             {
-                client.DownloadFile(uri, "adb.zip");
+                client.DownloadFile(uri, Path.GetTempPath() + "\\adb.zip");
 
                 using (ZipFile zip = ZipFile.Read("adb.zip"))
                 {
                     zip.ExtractAll(Path.GetTempPath() + "\\adb",
                     ExtractExistingFileAction.DoNotOverwrite);
                 }
+                File.Delete(Path.GetTempPath() + "\\adb.zip");
             }
         }
     }
