@@ -4,7 +4,6 @@ using System.Net;
 using System.IO;
 using System.Collections.Generic;
 using Ionic.Zip;
-using Usb.Events;
 
 namespace ADBForwarder
 {
@@ -15,9 +14,7 @@ namespace ADBForwarder
         static AdbServer server = new AdbServer();
         static Uri uri = new Uri("https://dl.google.com/android/repository/platform-tools-latest-windows.zip");
         static IPEndPoint endPoint = new IPEndPoint(IPAddress.Loopback, AdbClient.AdbServerPort);
-        List<DeviceData> devices = new List<DeviceData>();
         
-
         static void Main(string[] args)
         {
 
@@ -35,14 +32,13 @@ namespace ADBForwarder
             }
 
             client.Connect(endPoint);
-            
-            DeviceMonitor monitor = new DeviceMonitor(new AdbSocket(endPoint));
+
+            var devices = client.GetDevices();
+
+            var monitor = new DeviceMonitor(new AdbSocket(endPoint));
             monitor.DeviceConnected += Monitor_DeviceConnected;
             monitor.DeviceDisconnected += Monitor_DeviceDisconnected;
-            
             monitor.Start();
-
-            List<DeviceData> devices = client.GetDevices();
 
             while (true)
             {
@@ -58,7 +54,6 @@ namespace ADBForwarder
 
         private static void Monitor_DeviceConnected(object sender, DeviceDataEventArgs e)
         {
-
             Console.WriteLine($"Event: Connection\n Device: {e.Device.Serial}");
             System.Threading.Thread.Sleep(1000); // dont do shit immediately
             Forward();
