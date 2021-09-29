@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADBForwarder", "ADBForwarder.csproj", "{AC3AABF6-EF23-42CC-B24B-FD0E8EA4640E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC3AABF6-EF23-42CC-B24B-FD0E8EA4640E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC3AABF6-EF23-42CC-B24B-FD0E8EA4640E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC3AABF6-EF23-42CC-B24B-FD0E8EA4640E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC3AABF6-EF23-42CC-B24B-FD0E8EA4640E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADCEDE9D-36AE-42AC-9B03-2343F2571A91}
+	EndGlobalSection
+EndGlobal
