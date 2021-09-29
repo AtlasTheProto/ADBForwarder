@@ -9,6 +9,8 @@
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <GenerateRuntimeConfigurationFiles>false</GenerateRuntimeConfigurationFiles>
     <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+    <TrimMode>link</TrimMode>
+    <TrimmerDefaultAction>link</TrimmerDefaultAction>
   </PropertyGroup>
 
   <ItemGroup>
