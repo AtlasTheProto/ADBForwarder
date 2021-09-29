@@ -8,4 +8,5 @@
 ## Building
 
 Go look here for my build settings
+
 https://docs.microsoft.com/en-us/dotnet/core/deploying/trim-self-contained#trim-your-app---visual-studio
