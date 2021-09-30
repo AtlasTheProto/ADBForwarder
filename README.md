@@ -1,6 +1,8 @@
 # ADBForwarder
 
-Console application designed to handle forwarding TCP Ports (using [ADB](https://developer.android.com/studio/command-line/adb)) between your PC and Quest 2 headset, for use with [ALVR](https://github.com/alvr-org/ALVR)
+Console application designed to handle forwarding TCP Ports (using [ADB](https://developer.android.com/studio/command-line/adb)) between your PC and Quest 2 headset. 
+
+Specifically made for use with [ALVR](https://github.com/alvr-org/ALVR), for now.
 
 ### [Download here!](https://github.com/AtlasTheProto/ADBForwarder/releases/latest/download/ADBForwarder.exe)
 
