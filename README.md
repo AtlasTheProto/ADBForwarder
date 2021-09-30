@@ -1,13 +1,16 @@
 # ADBForwarder
- Dumb idle application that will forward your quest 2 headset to alvr over USB
 
-## [Download!](https://github.com/AtlasTheProto/ADBForwarder/releases/latest/download/ADBForwarder.exe)
+Console application designed to handle forwarding TCP Ports (using [ADB](https://developer.android.com/studio/command-line/adb)) between your PC and Quest 2 headset, for use with [ALVR](https://github.com/alvr-org/ALVR)
 
-## Building
+### [Download here!](https://github.com/AtlasTheProto/ADBForwarder/releases/latest/download/ADBForwarder.exe)
+
+# Building
 
 Go look here for my build settings
 
-https://docs.microsoft.com/en-us/dotnet/core/deploying/trim-self-contained#trim-your-app---visual-studio
+This app is published in debug mode, for some reason it'll refuse to run if published in release mode, I cannot figure out why.
+
+Other than that, its a standard dotnet publish using "Single-file" publish mode and "Ready-to-run"
 
 # It doesn't run!
 
@@ -18,3 +21,7 @@ Please install the DotNet 6 runtimes!
 [64bit (You probably want this)](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-6.0.0-rc.1-windows-x64-binaries)
 
 [Arm64](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-6.0.0-rc.1-windows-arm64-binaries)
+
+# Problems?
+
+Don't hesitate to raise an [issue](https://github.com/AtlasTheProto/ADBForwarder/issues) if you encounter problems!
