@@ -6,6 +6,15 @@ Specifically made for use with [ALVR](https://github.com/alvr-org/ALVR), for now
 
 ### [Download here!](https://github.com/AtlasTheProto/ADBForwarder/releases/latest/download/ADBForwarder.exe)
 
+# Usage
+
+* [Download the latest release](https://github.com/AtlasTheProto/ADBForwarder/releases/latest/download/ADBForwarder.exe)
+* Place the executable somewhere convenient
+* Run the program and ALVR, order does not matter
+* ALVR may (or may not) restart
+* You should see your device's serial ID show up in the console, if it says "Forwarded!" all is good.
+
+
 # Building
 
 Go look here for my build settings
