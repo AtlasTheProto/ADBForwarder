@@ -17,8 +17,6 @@ Specifically made for use with [ALVR](https://github.com/alvr-org/ALVR), for now
 
 # Building
 
-Go look here for my build settings
-
 This app is published in debug mode, for some reason it'll refuse to run if published in release mode, I cannot figure out why.
 
 Other than that, its a standard dotnet publish using "Single-file" publish mode and "Ready-to-run"
