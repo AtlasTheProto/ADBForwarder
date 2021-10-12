@@ -87,13 +87,13 @@ namespace ADBForwarder
 
         private static void Monitor_DeviceConnected(object sender, DeviceDataEventArgs e)
         {
-            Console.WriteLine($"Event: Connection: {e.Device.Serial}");
+            Console.WriteLine($"Connected device: {e.Device.Serial}");
             Forward(e.Device);
         }
 
         private static void Monitor_DeviceDisconnected(object sender, DeviceDataEventArgs e)
         {
-            Console.WriteLine($"Event: Disconnection: {e.Device.Serial}");
+            Console.WriteLine($"Disconnected device: {e.Device.Serial}");
         }
         
         private static void Forward(DeviceData device)
@@ -105,14 +105,14 @@ namespace ADBForwarder
             {
                 if (!deviceNames.Contains(deviceData.Product))
                 {
-                    Console.WriteLine("Skipped forwarding device: " + (string.IsNullOrEmpty(deviceData.Product) ? deviceData.Serial : deviceData.Product));
+                    Console.WriteLine($"Skipped forwarding device: {(string.IsNullOrEmpty(deviceData.Product) ? deviceData.Serial : deviceData.Product)}");
                     return;
                 }
 
                 client.CreateForward(deviceData, 9943, 9943);
                 client.CreateForward(deviceData, 9944, 9944);
             
-                Console.WriteLine("Successfully forwarded device: " + deviceData.Product);
+                Console.WriteLine($"Successfully forwarded device: {deviceData.Serial} [{deviceData.Product}]");
                     
                 return;
             }
@@ -122,12 +122,13 @@ namespace ADBForwarder
         {
             using var web = new WebClient();
             web.DownloadFile(downloadUri, "adb.zip");
-
+            Console.WriteLine("Download successful");
+            
             var zip = new FastZip();
             zip.ExtractZip("adb.zip", "adb", null);
-
+            Console.WriteLine("Extraction successful");
+            
             File.Delete("adb.zip");
-            Console.WriteLine($"Download Successful");
         }
 
         private static void SetExecutable(string fileName)
