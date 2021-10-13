@@ -28,9 +28,11 @@ namespace ADBForwarder
 
         private static void Main()
         {
+            Console.ResetColor();
             var currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             if (currentDirectory == null)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Path error!");
                 return;
             }
@@ -68,7 +70,7 @@ namespace ADBForwarder
                     SetExecutable(absoluteAdbPath);
             }
 
-            Console.WriteLine("Starting ADB Daemon...");
+            Console.WriteLine("Starting ADB Server...");
             server.StartServer(absoluteAdbPath, false);
 
             client.Connect(endPoint);
@@ -87,12 +89,14 @@ namespace ADBForwarder
 
         private static void Monitor_DeviceConnected(object sender, DeviceDataEventArgs e)
         {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine($"Connected device: {e.Device.Serial}");
             Forward(e.Device);
         }
 
         private static void Monitor_DeviceDisconnected(object sender, DeviceDataEventArgs e)
         {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine($"Disconnected device: {e.Device.Serial}");
         }
         
@@ -105,13 +109,15 @@ namespace ADBForwarder
             {
                 if (!deviceNames.Contains(deviceData.Product))
                 {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.WriteLine($"Skipped forwarding device: {(string.IsNullOrEmpty(deviceData.Product) ? deviceData.Serial : deviceData.Product)}");
                     return;
                 }
 
                 client.CreateForward(deviceData, 9943, 9943);
                 client.CreateForward(deviceData, 9944, 9944);
-            
+
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"Successfully forwarded device: {deviceData.Serial} [{deviceData.Product}]");
                     
                 return;
