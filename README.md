@@ -14,7 +14,7 @@ Specifically made for use with [ALVR](https://github.com/alvr-org/ALVR), for now
 * ALVR may (or may not) restart
 * You should see your device's serial ID show up in the console, if it says the following, all is well!
     * `Successfully forwarded device: 1WMHHXXXXXXXXX [hollywood]`
-    * "monterey" is Quest 1, "hollywood" is Quest 2
+    * "hollywood" is Quest 2, "monterey" is Quest 1, "pacific" is Go
 
 ## Windows
 
