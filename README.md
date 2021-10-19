@@ -1,6 +1,6 @@
 # ADBForwarder
 
-Console application designed to handle forwarding TCP Ports (using [ADB](https://developer.android.com/studio/command-line/adb)) between your PC and Quest/Go HMDs. 
+Console application designed to handle forwarding TCP Ports (using [ADB](https://developer.android.com/studio/command-line/adb)) between your PC and Quest/Go HMDs, over USB
 
 Specifically made for use with [ALVR](https://github.com/alvr-org/ALVR), for now. Supports the Oculus Go, Quest 1 and 2
 
