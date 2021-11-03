@@ -18,9 +18,12 @@ namespace ADBForwarder
         
         private static readonly string[] deviceNames =
         {
-            "monterey",     // Oculus Quest 1
-            "hollywood",    // Oculus Quest 2
-            "pacific"       // Oculus Go
+            "monterey",        // Oculus Quest 1
+            "hollywood",       // Oculus Quest 2
+            "pacific",         // Oculus Go
+            "vr_monterey",     // Edge case for linux, Quest 1
+            "vr_hollywood",    // Edge case for linux, Oculus Quest 2
+            "vr_pacific"       // Edge case for linux, Oculus Go
         };
         
         private static readonly AdbClient client = new AdbClient();
