@@ -28,6 +28,12 @@ You need to use [Mono](https://www.mono-project.com/download/stable/)
 
 Don't hesitate to raise an [issue](https://github.com/AtlasTheProto/ADBForwarder/issues) if you encounter problems!
 
+## Future Support
+
+Development on this has basically stopped, I got an Index.
+
+I encourage anyone who finds fixes, bugs, or new features to manage and advertise their own fork, if this repository becomes outdated, ask the ALVR team members to update the proper wiki links for this program to the new fork / etc.
+
 ## Attributions
 
 Thank you, [Mantas-2155X](https://github.com/Mantas-2155X), for iterating and refactoring my work, to bring Linux support!
